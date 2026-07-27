@@ -1,7 +1,8 @@
 --[[
     Code is not as clean as it could be but it works
     
-    Made by samet
+    Made by samet, additional features commisioned by illorsm
+
     This is a FREE ui release made by me (samet) on May 30 to celebrate my birthday, If anyone is selling this they are scammers.
     The design credits for the ui goes to eskolzz. It was brought to life in luau by me.
 
