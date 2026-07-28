@@ -1,17 +1,10 @@
---[[
-    Code is not as clean as it could be but it works
-    
-    Made by samet, additional features commisioned by illorsm
+--[[    
+    Made by samet (@joestar._3) additional features commissioned by illorsm (@illorsm)
 
-    This is a FREE ui release made by me (samet) on May 30 to celebrate my birthday, If anyone is selling this they are scammers.
-    The design credits for the ui goes to eskolzz. It was brought to life in luau by me.
+    This is a free ui release made by samet on May 30 to celebrate his birthday, If anyone is selling this they are scammers.
+    The design credits for the ui goes to eskolzz. It was brought to life in luau by samet.
 
-    MY ONLY ACCOUNT IS: joestar._3
-
-    If you want to commission a ui:
-    https://discord.gg/XsTteAwprs
-
-    Please give credit if used or modified.
+    If you want to commission a ui: https://discord.gg/XsTteAwprs
 ]]
 
 if getgenv().Library then
