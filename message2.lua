@@ -1,8 +1,5 @@
 --[[    
-    Made by samet (@joestar._3) additional features commissioned by illorsm (@illorsm)
-
-    This is a free ui release made by samet on May 30 to celebrate his birthday, If anyone is selling this they are scammers.
-    The design credits for the ui goes to eskolzz. It was brought to life in luau by samet.
+    Made by samet (@joestar._3)
 
     If you want to commission a ui: https://discord.gg/XsTteAwprs
 ]]
@@ -1673,7 +1670,19 @@ local Library = {
             end)
 
             Library:Connect(UserInputService.InputBegan, function(Input)
-                if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
+                if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.MouseWheel then
+                    if Colorpicker.IsOpen then
+                        if Items["ColorpickerWindow"]:IsMouseOverFrame() then 
+                            return 
+                        end
+
+                        Colorpicker:SetOpen(false)
+                    end
+                end
+            end)
+
+            Library:Connect(UserInputService.InputChanged, function(Input)
+                if Input.UserInputType == Enum.UserInputType.MouseWheel then
                     if Colorpicker.IsOpen then
                         if Items["ColorpickerWindow"]:IsMouseOverFrame() then 
                             return 
@@ -2104,7 +2113,15 @@ local Library = {
                     end
                 end
 
-                if Input.UserInputType == Enum.UserInputType.MouseButton1 and Keybind.IsOpen then 
+                if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.MouseWheel and Keybind.IsOpen then 
+                    if not Items["KeybindWindow"]:IsMouseOverFrame() and not ModeDropdown.Items.OptionHolder:IsMouseOverFrame() then
+                        Keybind:SetOpen(false)
+                    end
+                end
+            end)
+
+            Library:Connect(UserInputService.InputChanged, function(Input, GPE)
+                if Input.UserInputType == Enum.UserInputType.MouseWheel and Keybind.IsOpen then 
                     if not Items["KeybindWindow"]:IsMouseOverFrame() and not ModeDropdown.Items.OptionHolder:IsMouseOverFrame() then
                         Keybind:SetOpen(false)
                     end
@@ -4496,7 +4513,15 @@ local Library = {
             Items["OptionHolder"]:VisibleCheck()
 
             Library:Connect(UserInputService.InputBegan, function(Input)
-                if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+                if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.MouseWheel then
+                    if Dropdown.IsOpen and not Items["OptionHolder"]:IsMouseOverFrame() then
+                        Dropdown:SetOpen(false)
+                    end
+                end
+            end)
+
+            Library:Connect(UserInputService.InputChanged, function(Input)
+                if Input.UserInputType == Enum.UserInputType.MouseWheel then
                     if Dropdown.IsOpen and not Items["OptionHolder"]:IsMouseOverFrame() then
                         Dropdown:SetOpen(false)
                     end
