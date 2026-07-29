@@ -2910,6 +2910,7 @@ local Library = {
             local RenderStepped
 
             Self:OnHover(function()
+                if not Flags["LibraryTooltips"] then return end
                 local MouseLocation = UserInputService:GetMouseLocation()
                 Items["TooltipOutline"].Instance.Position = UDim2.new(0, MouseLocation.X + 15, 0, MouseLocation.Y + 15)
 
@@ -2925,6 +2926,7 @@ local Library = {
                     Items["TooltipOutline"].Instance.Position = UDim2.new(0, MouseLocation.X + 15, 0, MouseLocation.Y + 15)
                 end)
             end, function()
+                if not Flags["LibraryTooltips"] then return end
                 Items["TooltipOutline"]:Tween({Size = UDim2.new(0, 0, 0, Size.Y)})
                 FadeDescendants(true)
 
@@ -5365,7 +5367,7 @@ local Library = {
 
                     MenuSection:Toggle({
                         Name = "Tooltips",
-                        Flag = "Tooltips",
+                        Flag = "LibraryTooltips",
                         Default = true
                     })
                 end
